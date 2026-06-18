@@ -1,0 +1,32 @@
+# Maven
+target/
+*.class
+
+# Claude Code
+.claude/
+
+# Eclipse
+.factorypath
+
+# Logs
+*.log
+*.log.*
+
+# IDE - IntelliJ
+.idea/
+*.iml
+*.iws
+
+# IDE - Eclipse
+.eclipse/
+.settings/
+.classpath
+.project
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Spring Boot packaged jar
+*.jar
+*.war

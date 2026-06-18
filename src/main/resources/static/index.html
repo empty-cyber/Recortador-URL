@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recortador de enlaces · Sara Mula</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <p class="header__author">by <strong>Sara Mula</strong></p>
+            <h1 class="header__title">Recortador de enlaces</h1>
+            <p class="header__subtitle">Pega tu enlace largo y obtén uno corto al instante</p>
+        </header>
+
+        <main class="card">
+
+            <form id="shorten-form" novalidate>
+                <div class="input-group">
+                    <input
+                        type="url"
+                        id="url-input"
+                        class="input-group__field"
+                        placeholder="https://www.ejemplo.com/url-muy-larga..."
+                        autocomplete="off"
+                        aria-label="URL larga"
+                        required
+                    />
+                    <button type="submit" id="shorten-btn" class="btn btn--primary">
+                        <span class="btn__text">Acortar</span>
+                        <span class="btn__spinner" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <p id="error-msg" class="error-msg" role="alert" hidden></p>
+            </form>
+
+            <div class="alias-section">
+                <label class="alias-label" for="alias-input">
+                    Alias personalizado <span class="alias-optional">(opcional)</span>
+                </label>
+                <div class="alias-group" id="alias-group">
+                    <span class="alias-prefix">localhost:8080/</span>
+                    <input
+                        type="text"
+                        id="alias-input"
+                        class="alias-field"
+                        placeholder="mi-enlace"
+                        maxlength="30"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                </div>
+                <p class="alias-hint">Solo letras, números, guiones y guiones bajos</p>
+            </div>
+
+            <section id="result" class="result" hidden>
+                <p class="result__label">Tu enlace corto:</p>
+                <div class="result__box">
+                    <a id="short-url" class="result__link" href="#" target="_blank" rel="noopener noreferrer"></a>
+                    <button id="copy-btn" type="button" class="btn btn--copy" aria-label="Copiar enlace">
+                        <span class="btn__text">Copiar</span>
+                    </button>
+                </div>
+                <div class="qr-container">
+                    <p class="qr-label">Código QR</p>
+                    <div id="qr-code"></div>
+                    <p class="qr-hint">Haz clic en el QR para descargarlo</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p>Hecho con Spring Boot &amp; Java &mdash; <strong>Sara Mula</strong></p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
